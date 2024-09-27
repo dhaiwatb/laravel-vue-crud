@@ -4,3 +4,5 @@ import './bootstrap';
    import router from './router';
 
    createApp(App).use(router).mount('#app');
+
+   // console.log("Vue app is mounted successfully");
