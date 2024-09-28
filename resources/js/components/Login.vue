@@ -1,17 +1,19 @@
 <template>
 	<div class="login-container">
 	  <h2>Login</h2>
-	  <form @submit.prevent="login">
+	  <!-- <form @submit.prevent="login">
 		<input v-model="email" type="email" placeholder="Email" required>
 		<input v-model="password" type="password" placeholder="Password" required>
 		<button type="submit">Login</button>
 	  </form>
-	  <p v-if="error" class="error">{{ error }}</p>
+	  <p v-if="error" class="error">{{ error }}</p> -->
 	</div>
   </template>
   
   <script setup>
-  import { ref } from 'vue'
+  import { ref,  onMounted,  onBeforeMount } from 'vue';
+
+
   import { useRouter } from 'vue-router'
   import axios from 'axios'
   
@@ -20,7 +22,11 @@
   const error = ref('')
   const router = useRouter()
 
-  onMounted(() => {
+onBeforeMount(() => {
+  console.log('Login component is about to mount')
+})
+
+onMounted(() => {
   console.log('Login component mounted')
 })
   

@@ -1,8 +1,21 @@
-import './bootstrap';
-   import { createApp } from 'vue';
-   import App from './App.vue';
-   import router from './router';
+import { createApp } from 'vue';
+import App from './App.vue';
+import router from './router';
 
-   createApp(App).use(router).mount('#app');
+const app = createApp(App)
 
-   // console.log("Vue app is mounted successfully");
+app.config.errorHandler = (err, vm, info) => {
+  console.error('Global error:', err)
+  console.error('Vue instance:', vm)
+  console.error('Error info:', info)
+}
+
+app.use(router)
+
+router.onError((error) => {
+  console.error('Router error:', error)
+})
+
+app.mount('#app')
+
+console.log("Vue app is mounted successfully");
