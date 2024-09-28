@@ -15,27 +15,27 @@ const routes = [
   { 
     path: '/products', 
     name: 'ProductList', 
-    component: ProductList 
-    // component: () => import('../components/ProductList.vue'), // Lazy load this component
+    // component: ProductList 
+    component: () => import('../views/ProductList.vue'), // Lazy load this component
 
   },
   { 
     path: '/products/create', 
     name: 'ProductCreate', 
-    component: ProductForm 
-    // component: () => import('../components/ProductForm.vue') 
+    // component: ProductForm 
+    component: () => import('../views/ProductForm.vue') 
   },
   { 
     path: '/about', 
     name: 'About', 
-    component: About 
-    // component: () => import('../components/ProductForm.vue') 
+    // component: About 
+    component: () => import('../views/About.vue') 
   },
   { 
     path: '/products/:id/edit', 
     name: 'ProductEdit', 
-    component: ProductForm, 
-    // component: () => import('../components/ProductForm.vue'),
+    // component: ProductForm, 
+    component: () => import('../views/ProductForm.vue'),
     props: true 
   },
 ];
