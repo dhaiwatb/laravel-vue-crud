@@ -1,8 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Login from '../components/Login.vue'
-import ProductList from '../components/ProductList.vue'
-import ProductForm from '../components/ProductForm.vue'
-import About from '../components/About.vue'
+import Login from '../views/Login.vue'
+import ProductList from '../views/ProductList.vue'
+import ProductForm from '../views/ProductForm.vue'
+import About from '../views/About.vue'
 // Import other components as needed
 
 const routes = [

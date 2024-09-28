@@ -8,16 +8,17 @@
     <p>Current route: {{ $route.path }}</p>
     <p>Route name: {{ $route.name }}</p>
     <p>Route component: {{ $route.matched[0]?.components?.default?.name || 'Not found' }}</p>
-    <router-view v-slot="{ Component }">
+    <!-- <router-view v-slot="{ Component }">
       <component :is="Component" v-if="Component" />
       <p v-else>No component loaded</p>
-    </router-view>
+    </router-view> -->
+    <RouterView/>
   </div>
 </template>
 
 <script setup>
-import { onMounted, ref, watch } from 'vue'
-import { useRouter, useRoute } from 'vue-router'
+import { onMounted, ref, watch  } from 'vue'
+import { useRouter, useRoute, RouterView } from 'vue-router'
 
 const router = useRouter()
 const route = useRoute()
